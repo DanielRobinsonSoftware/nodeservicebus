@@ -1,14 +1,6 @@
-# Service [![Build Status](https://secure.travis-ci.org//service.png?branch=master)](http://travis-ci.org//service)
+# NodeServiceBus
 
-The best module ever.
-
-## Getting Started
-Install the module with: `npm install service`
-
-```javascript
-var service = require('service');
-service.awesome(); // "awesome"
-```
+This project is currently in development. Check back a bit later for progress.
 
 ## Documentation
 _(Coming soon)_
