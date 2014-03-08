@@ -1,0 +1,32 @@
+{
+  "name": "service",
+  "version": "0.0.0",
+  "main": "lib/service.js",
+  "description": "The best module ever.",
+  "homepage": "https://github.com//service",
+  "bugs": "https://github.com//service/issues",
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//service"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    
+    "should": "*",
+    
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.0",
+    "grunt-mocha-test": "~0.7.0",
+    "jshint-stylish": "~0.1.3",
+    "load-grunt-tasks": "~0.2.0",
+    "time-grunt": "~0.1.1"
+  }
+}
