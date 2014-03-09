@@ -7,5 +7,5 @@ var handlers = [
 ];
 
 service('Query Service', handlers, function(bus){
-  bus.send(message.create('cityQuery', 'UK'));
+  bus.send(message.createTransient('cityQuery', 'UK'));
 });
