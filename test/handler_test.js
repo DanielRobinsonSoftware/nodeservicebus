@@ -1,15 +1,9 @@
 'use strict';
 
 /*jshint expr: true*/
+/*exported should*/
 var should = require('should'),
     handler = require('../lib/handler');
-
-// by testing for the existance of should we prevent jshint throwing: 'should' is defined but never used.
-describe('Should Assertion Test', function () {
-  it('should have a should variable', function () {
-    should.exist(should);
-  });
-});
 
 describe('handler', function(){
 
