@@ -108,6 +108,7 @@ output:
 + Admin UI for monitoring all messages and performance
 + Able to record all messages (EventSourcing)
 + WebSocketService (full duplex communication between a front-end such as [Angular](http://angularjs.org/))
++ Service, handler, message and test generators.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
