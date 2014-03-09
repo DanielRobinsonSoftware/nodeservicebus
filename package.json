@@ -1,5 +1,5 @@
 {
-  "name": "NodeServiceBus",
+  "name": "nodeservicebus",
   "version": "0.0.1",
   "main": "app/query-service.js",
   "description": "Node.js Service platform based on NServicebus using Redis as PubSub",
