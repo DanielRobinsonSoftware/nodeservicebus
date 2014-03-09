@@ -23,79 +23,79 @@ You send messages around the system and one or many handlers will respond. Handl
 ### Direct Transport
 my-service.js
 
-  var nsb = require('nodeservicebus'),
-      myHandlers = require('./my-handlers');
+      var nsb = require('nodeservicebus'),
+          myHandlers = require('./my-handlers');
 
-  nsb.service.createService('my service', myHandlers, function(bus) {
-    var message = nsb.message.createDirect('cityRequest', 'UK');
-    bus.send(message);
-  });
+      nsb.service.createService('my service', myHandlers, function(bus) {
+        var message = nsb.message.createDirect('cityRequest', 'UK');
+        bus.send(message);
+      });
 
 city-request.js
 
-  var nsb = require('nodeservicebus');
+      var nsb = require('nodeservicebus');
 
-  module.exports = nsb.handler.createHandler('cityRequest', function(msg, bus){
-    console.log('received cities request for '+msg.payload);
+      module.exports = nsb.handler.createHandler('cityRequest', function(msg, bus){
+        console.log('received cities request for '+msg.payload);
 
-    var responseMessage = nsb.message.createDirect('cityResponse', ['London', 'Manchester', 'Birmingham']);
-    bus.send(responseMessage);
-  });
+        var responseMessage = nsb.message.createDirect('cityResponse', ['London', 'Manchester', 'Birmingham']);
+        bus.send(responseMessage);
+      });
 
 city-response.js
 
-  var nsb = require('nodeservicebus');
+      var nsb = require('nodeservicebus');
 
-  module.exports = nsb.handler.createHandler('cityResponse', function(msg){
-    console.log('received cities  '+msg.payload);
-  });
+      module.exports = nsb.handler.createHandler('cityResponse', function(msg){
+        console.log('received cities  '+msg.payload);
+      });
 
 output:
 
-  my service is online
-  received cities request for UK
-  received cities  London,Manchester,Birmingham
+      my service is online
+      received cities request for UK
+      received cities  London,Manchester,Birmingham
 
 ### Queued Transport
 
 my-service.js
 
-  var nsb = require('nodeservicebus'),
-      myHandlers = require('./my-handlers');
+      var nsb = require('nodeservicebus'),
+          myHandlers = require('./my-handlers');
 
-  nsb.service.createService('my service', myHandlers, function(bus) {
-    var message = nsb.message.createQueued('cityRequest', 'UK');
-    bus.send(message);
-  });
+      nsb.service.createService('my service', myHandlers, function(bus) {
+        var message = nsb.message.createQueued('cityRequest', 'UK');
+        bus.send(message);
+      });
 
 city-request.js
 
-  var nsb = require('nodeservicebus');
+      var nsb = require('nodeservicebus');
 
-  module.exports = nsb.handler.createHandler('cityRequest', function(msg, bus){
-    console.log('received cities request for '+msg.payload);
+      module.exports = nsb.handler.createHandler('cityRequest', function(msg, bus){
+        console.log('received cities request for '+msg.payload);
 
-    var responseMessage = nsb.message.createQueued('cityResponse', ['London', 'Manchester', 'Birmingham']);
-    bus.send(responseMessage);
-  });
+        var responseMessage = nsb.message.createQueued('cityResponse', ['London', 'Manchester', 'Birmingham']);
+        bus.send(responseMessage);
+      });
 
 city-response.js
 
-  var nsb = require('nodeservicebus');
+      var nsb = require('nodeservicebus');
 
-  module.exports = nsb.handler.createHandler('cityResponse', function(msg){
-    console.log('received cities  '+msg.payload);
-  });
+      module.exports = nsb.handler.createHandler('cityResponse', function(msg){
+        console.log('received cities  '+msg.payload);
+      });
 
 output:
 
-  my service is online
-  SUCCESS: PUBLISHER:main_publisher RESULT:1 CHANNEL:message TIMESTAMP:1394362145399
-  received cities request for UK
-  SUCCESS: SUBSCRIBER:main_subscriber RESULT:Received Message on Default CHANNEL:message TIMESTAMP:1394362145399
-  SUCCESS: PUBLISHER:main_publisher RESULT:1 CHANNEL:message TIMESTAMP:1394362145405
-  received cities  London,Manchester,Birmingham
-  SUCCESS: SUBSCRIBER:main_subscriber RESULT:Received Message on Default CHANNEL:message TIMESTAMP:1394362145405
+      my service is online
+      SUCCESS: PUBLISHER:main_publisher RESULT:1 CHANNEL:message TIMESTAMP:1394362145399
+      received cities request for UK
+      SUCCESS: SUBSCRIBER:main_subscriber RESULT:Received Message on Default CHANNEL:message TIMESTAMP:1394362145399
+      SUCCESS: PUBLISHER:main_publisher RESULT:1 CHANNEL:message TIMESTAMP:1394362145405
+      received cities  London,Manchester,Birmingham
+      SUCCESS: SUBSCRIBER:main_subscriber RESULT:Received Message on Default CHANNEL:message TIMESTAMP:1394362145405
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
