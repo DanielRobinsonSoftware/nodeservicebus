@@ -10,8 +10,7 @@ NodeServiceBus aims to provide you with a service host that you can clone in pro
 You can use it inside express apps or as standalone processes.
 
 It uses Redis PubSub with a reliable persistence mechanism, which means that messages will be queued until service hosts come back online.
-The main concept around NodeServiceBus is to allow you to follow the [CQRS](http://en.wikipedia.org/wiki/Command%E2%80%93query_separation) pattern, but instead of dealing with Commands and Queries, it is merged 'Message' and 'MessageHandler'.
-This allows you full control as to how you would like to structure your logic.
+The main concept around NodeServiceBus is to allow you to follow the [CQRS](http://en.wikipedia.org/wiki/Command%E2%80%93query_separation) pattern. NodeServiceBus uses a simple 'Message' and 'MessageHandler' pattern, which allows you full control as to how you would like to structure your logic.
 
 The point of NodeServiceBus is to send messages around the system and have one or many handlers respond (PubSub).
 Handlers can also send messages which allows everything to be event driven and non-blocking. There is no single 'source of truth' and every component knows only what it has to do (Single Responsibility).
