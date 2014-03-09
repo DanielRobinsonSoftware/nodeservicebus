@@ -12,7 +12,7 @@ describe('Should Assertion Test', function () {
 
 describe('AwesomenessTest', function(){
   it('should return awesome from #awesome()', function(done){
-
+    '1'.should.equal('1');
     done();
   });
   it('is pending implementation');

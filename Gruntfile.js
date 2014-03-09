@@ -3,7 +3,7 @@
 module.exports = function (grunt) {
   // Show elapsed time at the end
   require('time-grunt')(grunt);
-  
+
   // load all grunt tasks matching the `grunt-*` pattern
   require('load-grunt-tasks')(grunt);
 
@@ -12,10 +12,10 @@ module.exports = function (grunt) {
     mochaTest: {
       options: {
         reporter: 'spec',
-        
+
         ui: 'bdd'
-        
-      }, 
+
+      },
       test: {
         src: ['test/**/*.js']
       }
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         src: 'Gruntfile.js'
       },
       lib: {
-        src: ['lib/**/*.js']
+        src: ['lib/**/*.js', 'app/**/*.js']
       },
       test: {
         src: ['test/**/*.js']
@@ -50,6 +50,8 @@ module.exports = function (grunt) {
       }
     }
   });
+
+  grunt.loadNpmTasks('grunt-notify');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'mochaTest']);
