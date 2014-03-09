@@ -1,6 +1,6 @@
 {
   "name": "nodeservicebus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "app/query-service.js",
   "description": "Node.js Service platform based on NServicebus using Redis as PubSub",
   "homepage": "https://github.com/marceldupr/nodeservicebus",
