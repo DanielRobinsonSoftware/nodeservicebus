@@ -2,6 +2,10 @@
 
 This project is currently in development and in very early stages. You are welcome to have a play around and offer suggestions.
 
+## Install
+
+      npm install nodeservicebus --save
+
 ## Documentation
 
 ## About
@@ -15,10 +19,8 @@ The main concept around NodeServiceBus is to allow you to follow the [CQRS](http
 The point of NodeServiceBus is to send messages around the system and have one or many handlers respond (PubSub).
 Handlers can also send messages which allows everything to be event driven and non-blocking. There is no single 'source of truth' and every component knows only what it has to do (Single Responsibility).
 
-### Install
-+ Install Redis. Support for RedisToGo has been implemented but not yet tested.
-+ npm install nodeservicebus --save
-+ start coding!
+### Prerequisites
+Install Redis. Support for RedisToGo has been implemented but not yet tested.
 
 ## Examples
 
