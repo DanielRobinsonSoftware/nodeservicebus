@@ -6,12 +6,15 @@ This project is currently in development and in very early stages. You are welco
 
 ## About
 
-Nodeservicebus aims to provide you with a service host that you can clone in process (with something like [cluster](http://nodejs.org/api/cluster.html) or on many different machines.
+NodeServiceBus aims to provide you with a service host that you can clone in process (with something like [cluster](http://nodejs.org/api/cluster.html) ) or on many different machines.
 You can use it inside express apps or as standalone processes.
 
 It uses Redis PubSub with a reliable persistence mechanism, which means that messages will be queued until service hosts come back online.
-The main concept around Nodeservicebus is the 'Command' and 'CommandHandler' pattern, but renamed slightly to be more of a 'Message' and 'MessageHandler' pattern.
-You send messages around the system and one or many handlers will respond. Handlers can also send messages. Everything is Event driven and non-blocking.
+The main concept around NodeServiceBus is to allow you to follow the [CQRS](http://en.wikipedia.org/wiki/Command%E2%80%93query_separation) pattern, but instead of dealing with Commands and Queries, it is merged 'Message' and 'MessageHandler'.
+This allows you full control as to how you would like to structure your logic.
+
+The point of NodeServiceBus is to send messages around the system and have one or many handlers respond (PubSub).
+Handlers can also send messages which allows everything to be event driven and non-blocking. There is no single 'source of truth' and every component knows only what it has to do (Single Responsibility).
 
 ### Install
 + Install Redis. Support for RedisToGo has been implemented but not yet tested.
@@ -96,6 +99,14 @@ output:
       SUCCESS: PUBLISHER:main_publisher RESULT:1 CHANNEL:message TIMESTAMP:1394362145405
       received cities  London,Manchester,Birmingham
       SUCCESS: SUBSCRIBER:main_subscriber RESULT:Received Message on Default CHANNEL:message TIMESTAMP:1394362145405
+
+## Roadmap
+
++ Dependency Injection in Handlers
++ Built in Handlers (eg. Logging, FileWatching, HttpGet and HttpPost, etc...)
++ Admin UI for monitoring all messages and performance
++ Able to record all messages (EventSourcing)
++ WebSocketService (full duplex communication between a front-end such as [Angular](http://angularjs.org/))
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
