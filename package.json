@@ -1,17 +1,17 @@
 {
-  "name": "service",
-  "version": "0.0.0",
-  "main": "lib/service.js",
-  "description": "The best module ever.",
-  "homepage": "https://github.com//service",
-  "bugs": "https://github.com//service/issues",
+  "name": "NodeServiceBus",
+  "version": "0.0.1",
+  "main": "app/query-service.js",
+  "description": "Node.js Service platform based on NServicebus using Redis as PubSub",
+  "homepage": "https://github.com/marceldupr/nodeservicebus",
+  "bugs": "https://github.com/marceldupr/nodeservicebus/issues",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Marcel du Preez",
+    "email": "marceldupr@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com//service"
+    "url": "https://github.com/marceldupr/nodeservicebus"
   },
   "licenses": [
     {
