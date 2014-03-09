@@ -1,6 +1,6 @@
 {
   "name": "nodeservicebus",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "examples/direct/my-service.js",
   "description": "Node.js Service platform based on NServicebus using Redis as PubSub",
   "homepage": "https://github.com/marceldupr/nodeservicebus",

@@ -114,7 +114,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 The initial scaffold for this module was generated thanks to the Node-Mocha-Star generator (https://github.com/braddenver/generator-node-mocha-star)
 
 ## Release History
-_(Nothing yet)_
+http://www.npmjs.org/package/nodeservicebus
 
 ## License
 Copyright (c) 2014 Marcel du Preez. Licensed under the MIT license.
