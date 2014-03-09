@@ -1,7 +1,8 @@
 'use strict';
 
 /*jshint expr: true*/
-var should = require('should');
+var should = require('should'),
+    service = require('../lib/service');
 
 // by testing for the existance of should we prevent jshint throwing: 'should' is defined but never used.
 describe('Should Assertion Test', function () {
@@ -10,12 +11,13 @@ describe('Should Assertion Test', function () {
   });
 });
 
-describe('AwesomenessTest', function(){
-  it('should return awesome from #awesome()', function(done){
-    '1'.should.equal('1');
-    done();
+describe('service', function(){
+  it('should call start method and have a non empty bus var', function(done){
+    service.createService('service 1', [], function(bus){
+      bus.should.be.ok;
+      done();
+    });
   });
-  it('is pending implementation');
 });
 
 
